@@ -14,7 +14,7 @@ import {FormControl} from "@angular/forms";
     </nav>
     <br /><br />
     <div class="container">
-      <div class="row well">
+      <div class="row">
         <div class="col">
           <h2>Handling Form Events with Observables</h2>
           <br />
