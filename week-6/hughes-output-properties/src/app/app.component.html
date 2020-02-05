@@ -1,0 +1,34 @@
+<!--
+; ============================================
+; Title: app.component.html
+; Date: 04 February 2020
+; Modified By: joshua Hughes
+; Description: Output properties
+;=============================================
+ -->
+ <mat-toolbar class="menu" role="header" color="primary">
+    <mat-toolbar-row>
+      <button mat-button class="toolbar__icon-button mat-button" routerLink="/home">
+        <span style="margin-left: 5px !important;" >Home</span>
+      </button>
+      <div fxFlex="32"></div>
+      <h2>Josh's Output Properties</h2>
+      <div fxFlex="32"></div>
+      <button mat-button class="mat-button">
+        Price
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="parent" fxLayout="row">
+    <div class="left" fxFlex="20">
+
+    </div>
+    <div class="right" fxFlex>
+
+        <h2>AppComponent received: {{ priceQuote?.stockSymbol }} {{ priceQuote?.lastPrice | currency: 'USD' }}</h2>
+        <br><br><br>
+        <app-price-quote (lastPrice)="priceQuoteHandler($event)"></app-price-quote>
+
+    </div>
+  </div>
+

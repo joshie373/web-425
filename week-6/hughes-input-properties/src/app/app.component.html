@@ -1,0 +1,33 @@
+<!--
+; ============================================
+; Title: app.component.html
+; Date: 04 February 2020
+; Modified By: joshua Hughes
+; Description: Input properties
+;=============================================
+ -->
+ <mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button" routerLink="/home">
+      <span style="margin-left: 5px !important;" >Home</span>
+    </button>
+    <div fxFlex="32"></div>
+    <h2>Josh's Input Properties</h2>
+    <div fxFlex="32"></div>
+    <button mat-button class="mat-button">
+      Order
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="parent" fxLayout="row">
+  <div class="left" fxFlex="20">
+
+  </div>
+  <div class="right" fxFlex>
+    <h3>Stock Input</h3>
+    <input type="text" placeholder="Enter stock (e.g. AAPL)" (change)="onChangeEvent($event)" ><br><br><br>
+    <app-order [stockSymbol]="stock" [quantity]="numberOfShares"></app-order>
+
+  </div>
+</div>
+
