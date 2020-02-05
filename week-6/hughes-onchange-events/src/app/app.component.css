@@ -1,0 +1,24 @@
+.parent {
+  height: 100%; width:100%;
+}
+
+.left {
+  background-color: rgba(131, 6, 6, 0.64);
+  height:700px;
+}
+
+.right {
+  background-color: rgba(100, 100, 100, 0.644);
+  height:700px;
+  padding-top:100px;
+  text-align: center;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: gold;
+}
