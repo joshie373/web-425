@@ -1,0 +1,77 @@
+<!--
+; ============================================
+; Title: app.component.html
+; Date: 11 February 2020
+; Modified By: joshua Hughes
+; Description: template driven forms
+;=============================================
+ -->
+ <mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button" routerLink="/home">
+      <span style="margin-left: 5px !important;" >Home</span>
+    </button>
+    <div fxFlex="32"></div>
+    <h2>Josh's template driven forms</h2>
+    <div fxFlex="32"></div>
+    <button mat-button class="mat-button">
+      Login
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="parent" fxLayout="row">
+  <div class="left" fxFlex="20">
+
+  </div>
+  <div class="right" fxFlex>
+    <div fxLayout="row">
+      <div fxFlex></div>
+      <div class="parent2" fxFlex="50">
+
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+          <div fxLayout="row">
+            <span fxFlex="30">Username: </span>
+            <div fxFlex="10"></div>
+            <input fxFlex="50" type="text" name="username" ngModel>
+            <div fxFlex></div>
+          </div>
+          <br>
+          <div fxLayout="row">
+            <span fxFlex="30">SSN: </span>
+            <div fxFlex="10"></div>
+            <input fxFlex="50" type="text" name="ssn" ngModel>
+            <div fxFlex></div>
+          </div>
+          <br>
+          <div ngModelGroup="passwordsGroup">
+            <div fxLayout="row">
+              <span fxFlex="30">Password: </span>
+              <div fxFlex="10"></div>
+              <input fxFlex="50" type="password" name="password" ngModel>
+              <div fxFlex></div>
+            </div>
+            <br>
+            <div fxLayout="row">
+              <span fxFlex="40">Confirm password: </span>
+              <div ></div>
+              <input fxFlex="50" type="password" name="pconfirm" ngModel>
+              <div fxFlex></div>
+            </div>
+          </div>
+          <br>
+          <div fxLayout="row">
+            <div fxFlex="30"></div>
+            <div fxFlex="10"></div>
+            <div fxFlex="50"></div>
+            <div fxFlex><button type="submit">Submit</button></div>
+          </div>
+
+
+        </form>
+      </div>
+      <div fxFlex></div>
+    </div>
+  </div>
+</div>
+
