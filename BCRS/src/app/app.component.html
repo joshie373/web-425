@@ -1,0 +1,108 @@
+<!--
+; ============================================
+; Title: app.component.html
+; Date: 19 February 2020
+; Modified By: joshua Hughes
+; Description: bobs computer repair shop
+;=============================================
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bobs Computer Repair Shop</title>
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ </head>
+ <body>
+  <mat-toolbar class="mat-toolbar mat-primary mat-toolbar-multiple-rows" color="primary" role="header">
+    <mat-toolbar-row>
+      <div fxFlex="40"></div>
+        <h2 fxFlex>Bob's Computer Repair Shop</h2>
+      <div fxFlex></div>
+      <button mat-button class="mat-button" (click)="login()">
+        {{loggedStatus}}
+      </button>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="parent" fxLayout="row">
+    <div class="left" fxFlex="20">
+        <mat-nav-list role="navigation" class="mat-nav-list mat-list-base" style="display: block;width:100%">
+          <a mat-list-item="" class="mat-list-item" routerLink="/" >
+            <div class="mat-list-item-content">
+              <div class="mat-list-text">Home</div>
+            </div>
+          </a>
+          <a mat-list-item="" class="mat-list-item" [routerLink]="['/new']" >
+            <div class="mat-list-item-content">
+              <div class="mat-list-text">Order Services</div>
+            </div>
+          </a>
+          <a mat-list-item="" class="mat-list-item" routerLink="/" >
+            <div class="mat-list-item-content">
+              <div class="mat-list-text">Invoice Lookup</div>
+            </div>
+          </a>
+          <a mat-list-item="" class="mat-list-item" routerLinkActive="active" routerLink="orders-list" *ngIf="LoggedIn">
+            <div class="mat-list-item-content">
+              <div class="mat-list-text">Review and complete orders</div>
+            </div>
+          </a>
+        </mat-nav-list>
+    </div>
+    <div class="right" fxFlex>
+      <div fxLayout="row">
+        <div fxFlex="5"></div>
+        <div color="accent" fxFlex>
+          <router-outlet></router-outlet>
+        </div>
+        <div fxFlex>
+          <!-- Login Form -->
+          <div style="float:right; background-color: aliceblue;padding:20px;  border: 1px solid;
+          box-shadow: 2px 5px #888888;" *ngIf="Login">
+            <button mat-raised-button (click)="closeLogin()" style="float:right;"><b>X</b></button>
+            <h4>Login:</h4><hr>
+            <form>
+              <div fxLayout="row">
+                <span fxFlex="30">Username: </span>
+                <div fxFlex="10"></div>
+                <input fxFlex="50" type="text" name="username" ngModel>
+                <div fxFlex></div>
+              </div>
+              <br>
+              <div ngModelGroup="passwordsGroup">
+                <div fxLayout="row">
+                  <span fxFlex="30">Password: </span>
+                  <div fxFlex="10"></div>
+                  <input fxFlex="50" type="password" name="password" ngModel>
+                  <div fxFlex></div>
+                </div>
+                <div fxLayout="row">
+                  <span fxFlex="40">Confirm password: </span>
+                  <div ></div>
+                  <input fxFlex="50" type="password" name="pconfirm" ngModel>
+                  <div fxFlex></div>
+                </div>
+              </div>
+              <br>
+              <div fxLayout="row">
+                <div fxFlex="30"></div>
+                <div fxFlex="10"></div>
+                <div fxFlex="50"></div>
+                <div fxFlex><button type="submit" (click)="checkLogin()">Login</button></div>
+              </div>
+            </form>
+          </div> <!-- end Login Form -->
+        </div>
+        <div fxFlex="5"></div>
+      </div>
+    </div>
+  </div>
+
+ </body>
+ </html>

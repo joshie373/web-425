@@ -1,0 +1,30 @@
+.error {
+  color: red;
+}
+.hasError {
+  border: 1px solid red;
+}
+
+.parent {
+  height: 100%; width:100%;
+  position: relative;
+}
+
+.left {
+  height:700px;
+}
+
+.right {
+  background-color: rgba(100, 100, 100, 0.644);
+  height:880px;
+  padding-top:50px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: gold;
+}
